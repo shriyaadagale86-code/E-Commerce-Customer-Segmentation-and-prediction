@@ -20,6 +20,7 @@ def load_model():
 
 clf = load_model()
 
+
 # 3. SEGMENT NAMING LOGIC (From your Colab script)
 def name_segments(cluster):
     if cluster == 0: return 'Regulars'
