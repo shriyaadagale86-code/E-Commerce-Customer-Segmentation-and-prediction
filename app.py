@@ -7,10 +7,9 @@ import seaborn as sns
 from sklearn.metrics import confusion_matrix
 
 # 1. PAGE CONFIGURATION (Makes it wide like the video)
-st.set_page_config(page_title="Customer Segmenter Dashboard", layout="wide")
+st.set_page_config(page_title="E-commerce Customer Segmentation and Prediction App", layout="wide")
 
 # 2. LOAD THE MODEL (Using the file you downloaded from Colab)
-@st.cache_resource
 def load_model():
     try:
         with open('model.pkl', 'rb') as f:
@@ -44,12 +43,12 @@ with st.sidebar:
     st.write("3: Champions (VIP)")
 
 # 5. DATASET PREVIEW (The top section of the video)
-st.title("🛍️ E-commerce Customer Segmenter")
+st.title("E-commerce Customer Segmentation and Prediction App")
 st.subheader("Dataset Preview")
 
 # Display the CSV you downloaded from Colab
 try:
-    df = pd.read_csv('powerbi_final_data.csv')
+    df = pd.read_csv('customer segmentation/powerbi_final_data (1).csv')
     st.dataframe(df.head(10), use_container_width=True)
 except:
     st.warning("Upload 'powerbi_final_data.csv' to see the dataset preview here.")
